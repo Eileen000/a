@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+ int n;
+ while(cin>>n)
+ {
+ int a[n+1],ans=0,ansx=0;
+ for(int i=1;i<=n/2;i++)
+ {
+  cin>>a[i];
+ }
+ sort(a+1,a+n/2+1);
+ 
+ for(int i=1;i<=n/2;i++)
+ {
+  if(a[i]!=2*i-1) ans+=abs(2*i-1-a[i]);
+  if(a[i]!=2*i) ansx+=abs(2*i-a[i]);
+ }
+ 
+ ans=min(ans,ansx);
+ 
+ cout<<ans<<endl;
+ }
+ 
+ return 0;
+}
